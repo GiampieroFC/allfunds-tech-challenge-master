@@ -44,7 +44,7 @@ function App() {
             !showCart
             &&
             <button onClick={() => setshowCart(true)} className='my-12 block sm:hidden bg-pink-300 px-4 py-2 rounded-md hover:bg-pink-700 transition-colors duration-150'>
-              Show Cart
+              Show Cart &rarr;
             </button>
           }
 

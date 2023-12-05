@@ -86,7 +86,7 @@ export const ProductCard = ({ id, image_url, price, productDescription, productN
                 <span className="text-left break-words font-sans ">{productDescription}</span>
 
                 <div className="flex justify-between items-end">
-                    <span><span className="font-semibold">Left</span>: {stock} {stock === 1 ? 'product' : 'products'} </span>
+                    <span><span className="font-semibold">Left</span>{`: ${stock} ${stock === 1 ? 'product' : 'products'}`}</span>
                     {
                         !!favorite ?
                             <button type="submit" onClick={() => quitFav(id)}>

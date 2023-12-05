@@ -16,9 +16,7 @@ export const CartContainer = () => {
             <div className="min-w-full flex-col justify-start rounded-md border-2 border-black p-2">
 
                 <div className="text-center">
-                    <h1 className="text-2xl font-extrabold mb-5">Checkout: {
-                        inCart.map(c => c.price * (c.inCart ?? 0)).reduce((prev, curr) => prev + curr, 0)
-                    } €</h1>
+                    <h1 className="text-2xl font-extrabold mb-5">{`Checkout: ${inCart.map(c => c.price * (c.inCart ?? 0)).reduce((prev, curr) => prev + curr, 0)} €`}</h1>
                 </div>
 
                 <div >

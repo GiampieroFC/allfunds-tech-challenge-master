@@ -45,7 +45,7 @@ export const CartProduct = ({ id, image_url, price, productName, stock, inCart }
                         <button onClick={() => quitFromCart(id)} className="bg-green-500 hover:bg-green-400 py-1 px-2 rounded border border-green-600 active:scale-90 transition duration-150" type="button"> - </button>
                     </div>
                 </div>
-                <div className="p-3 text-2xl text-left">{price}€</div>
+                <div className="p-3 text-2xl text-left">{`${price}€`}</div>
             </div>
 
         </div>
