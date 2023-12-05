@@ -13,7 +13,7 @@ export const CartContainer = () => {
 
     return (
         <>
-            <div className="flex-col justify-start rounded-md border-2 border-black p-2">
+            <div className="min-w-full flex-col justify-start rounded-md border-2 border-black p-2">
 
                 <div className="text-center">
                     <h1 className="text-2xl font-extrabold mb-5">Checkout: {

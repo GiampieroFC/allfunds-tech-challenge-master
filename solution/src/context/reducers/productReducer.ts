@@ -1,8 +1,10 @@
-import { ProductCardProps } from "../../components/ProductCard";
+import { ProductCardProps } from '../../components/ProductCard';
 
 export enum TypeActionProduct {
     getProducts = 'ADD_PRODUCT',
     addToCart = 'ADD_TO_CART',
+    addToFav = 'ADD_TO_FAV',
+    quitFromFav = 'QUIT_FROM_FAV',
     quitFromCart = 'QUIT_FROM_CART',
 }
 
@@ -16,7 +18,10 @@ export const productReducer = (initialState: ProductCardProps[], action: ActionP
 
     switch (action.type) {
         case TypeActionProduct.getProducts:
-            return [...action.payload];
+            const idInitialState = initialState.map(s => s.id)
+            const newProducts = action.payload.filter((p: ProductCardProps) => !idInitialState.includes(p.id))
+
+            return [...initialState, ...newProducts];
 
         case TypeActionProduct.addToCart:
 
@@ -33,6 +38,30 @@ export const productReducer = (initialState: ProductCardProps[], action: ActionP
                 return c;
             })
             return [...toCart];
+
+        case TypeActionProduct.addToFav:
+
+            const withFavs = initialState.map(c => {
+
+                if (c.id === action.payload) {
+                    c.favorite = '1';
+                }
+
+                return c;
+            })
+            return [...withFavs];
+
+        case TypeActionProduct.quitFromFav:
+
+            const withoutFavs = initialState.map(c => {
+
+                if (c.id === action.payload) {
+                    c.favorite = 0;
+                }
+
+                return c;
+            })
+            return [...withoutFavs];
 
         case TypeActionProduct.quitFromCart:
 
