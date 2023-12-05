@@ -1,0 +1,12 @@
+{
+  "name": "allfunds-tech-challenge",
+  "version": "1.0.0",
+  "description": "Shopping list Rest API",
+  "scripts": {
+    "start": "json-server --watch db.json",
+    "dev": "json-server --host 127.0.0.1 db.json"
+  },
+  "devDependencies": {
+    "json-server": "^0.16.3"
+  }
+}
