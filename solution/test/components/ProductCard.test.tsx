@@ -45,7 +45,7 @@ describe('<ProductCard/>', () => {
 
         const product = render(<ProductCard {...mockProduct} />);
 
-        expect(product.getAllByRole('button')[0].innerHTML).toBe('<img width="34" src="/src/assets/heart-outline.png" alt="This product isn\'t favorite">');
+        expect(product.getAllByRole('button')[0].innerHTML).toBe('<img width="24" src="/src/assets/heart-outline.png" alt="This product isn\'t favorite">');
         expect(product.getAllByRole('button')[1].innerHTML).toBe('add + ');
 
 

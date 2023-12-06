@@ -14,9 +14,6 @@ export const FavContainer = () => {
 
         (async () => {
 
-            // const ls = localStorage.getItem('favorites')
-            // const inLS = await JSON.parse(ls!);
-
             const favorites = await fetchProducts('?favorite=1');
             localStorage.setItem('favorites', JSON.stringify([...favorites]))
 
@@ -24,21 +21,18 @@ export const FavContainer = () => {
             const favoritesLS = await JSON.parse(fromLS!);
 
             setFavs(favoritesLS)
+
         })();
 
 
     }, [state])
 
-
-    console.log(favs)
     return (
 
-        <div className="min-w-full flex-col justify-start rounded-md p-2">
+        <div className="flex flex-col items-center m-auto">
 
-            <div className="text-center">
-                <h1 className="text-2xl font-extrabold mb-5">Favorites:</h1>
-            </div>
-            <div>
+            <p className="text-center m-3 text-xl font-bold w-96">Favorites:</p>
+            <div className="flex flex-wrap justify-center">
                 {
                     favs.map(g => <Fav key={g.id} {...g} />)
                 }

@@ -38,22 +38,23 @@ export const Fav = ({ id, image_url, price, productName }: ProductInCartProps) =
     }
 
     return (
-        <div className='bg-gray-400 rounded p-3 w-full my-3'>
-            <div className="h-fit m-2 flex justify-between items-center rounded">
+        <div className='w-96 flex justify-between bg-slate-100 rounded-md m-2 p-1'>
 
-                <img className="w-24 h-24 rounded" src={image_url} alt={productName} loading="lazy" />
-                <div className='flex flex-col justify-center items-center'>
-                    <h3 className="font-bold p-3 break-words">{productName}</h3>
-                    <div className='flex'>
+            <img className="w-24 h-24 rounded-md" src={image_url} alt={productName} loading="lazy" />
 
-                        <button type="submit" onClick={() => quitFav(id)}>
-                            <img width={34} src={heartfilled} alt="This product is your favorite" />
-                        </button>
+            <div className="flex flex-col items-center">
 
-                    </div>
+                <div className="flex justify-between items-center">
+                    <h3 className="font-bold p-3 line-clamp-1 break-words">{productName}</h3>
+                    <div className="p-3 text-xl text-left">{price}€</div>
                 </div>
-                <div className="p-3 text-2xl text-left">{price}€</div>
+
+                <button type="submit" onClick={() => quitFav(id)}>
+                    <img width={24} src={heartfilled} alt="This product is your favorite" />
+                </button>
+
             </div>
+
         </div>
     )
 }

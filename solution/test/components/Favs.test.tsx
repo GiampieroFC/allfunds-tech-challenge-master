@@ -37,7 +37,7 @@ describe('<Fav/>', () => {
 
         const { getByRole } = render(<Fav {...mockProduct} />);
 
-        expect(getByRole('button').innerHTML).toBe('<img width="34" src="/src/assets/heart-filled.png" alt="This product is your favorite">')
+        expect(getByRole('button').innerHTML).toBe('<img width="24" src="/src/assets/heart-filled.png" alt="This product is your favorite">')
 
     });
 
