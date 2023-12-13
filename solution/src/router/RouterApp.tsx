@@ -10,6 +10,7 @@ export const RouterApp = () => {
         <>
             <NavBar />
             <Routes>
+                <Route path='/' element={<ProductCardContainer />} />
                 <Route path='/products' element={<ProductCardContainer />} />
                 <Route path='/cart' element={<CartContainer />} />
                 <Route path='/favorites' element={<FavContainer />} />

@@ -18,5 +18,4 @@ export const ProductProvider = ({ children }: Props) => {
             {children}
         </ProductContext.Provider>
     );
-
 }
